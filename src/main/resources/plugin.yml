@@ -10,3 +10,6 @@ commands:
     description: Toggles waterwalking
   settings:
     description: Opens the GUI for settings!
+  reloadwaterwalking:
+    description: Reloads the config
+    aliases: reloadww

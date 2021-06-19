@@ -19,6 +19,7 @@ public class PlayerJoin implements Listener {
 
         if(!plugin.data.getConfig().isSet(path)) {
             plugin.data.getConfig().set("path", plugin.getConfig().getBoolean("enabled-by-default"));
+            plugin.data.saveConfig();
         }
 
     }

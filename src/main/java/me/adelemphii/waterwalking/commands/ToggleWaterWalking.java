@@ -29,9 +29,11 @@ public class ToggleWaterWalking implements CommandExecutor {
             // IF water-walk is set to false in database.yml, set it to true.
             if (plugin.data.getConfig().getBoolean(path)) {
                 plugin.data.getConfig().set(path, false);
+                plugin.data.saveConfig();
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cWater-walking disabled."));
             } else {
                 plugin.data.getConfig().set(path, true);
+                plugin.data.saveConfig();
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aWater-walking enabled."));
             }
             return true;

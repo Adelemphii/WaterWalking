@@ -23,9 +23,8 @@ public class SettingsGUI {
 
         ChestGui gui = new ChestGui(1, ChatColor.DARK_GREEN + "Water-Walking Settings");
 
-        gui.setOnGlobalClick(event -> {
-            event.setCancelled(true);
-        });
+        // Makes sure players can't take from inventory
+        gui.setOnGlobalClick(event -> event.setCancelled(true));
 
         StaticPane pane = new StaticPane(0, 0, 9, 1);
 
@@ -34,6 +33,7 @@ public class SettingsGUI {
         ItemStack greenWool = new ItemStack(Material.LIME_WOOL);
 
         ItemMeta green = greenWool.getItemMeta();
+        assert green != null;
         green.setDisplayName(ChatColor.GREEN + "ENABLED");
         greenWool.setItemMeta(green);
 
@@ -52,6 +52,7 @@ public class SettingsGUI {
                 greenWool.setItemMeta(green2);
 
                 plugin.data.getConfig().set(path, false);
+                plugin.data.saveConfig();
 
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cWater-Walking disabled."));
                 gui.update();
@@ -62,10 +63,12 @@ public class SettingsGUI {
                 redWool.setType(Material.LIME_WOOL);
 
                 ItemMeta red2 = redWool.getItemMeta();
+                assert red2 != null;
                 red2.setDisplayName(ChatColor.GREEN + "ENABLED");
                 redWool.setItemMeta(red2);
 
                 plugin.data.getConfig().set(path, true);
+                plugin.data.saveConfig();
 
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aWater-Walking enabled."));
                 gui.update();

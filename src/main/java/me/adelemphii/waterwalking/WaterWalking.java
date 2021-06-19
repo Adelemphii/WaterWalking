@@ -1,5 +1,6 @@
 package me.adelemphii.waterwalking;
 
+import me.adelemphii.waterwalking.commands.ReloadWaterWalking;
 import me.adelemphii.waterwalking.commands.SettingsWaterWalking;
 import me.adelemphii.waterwalking.commands.ToggleWaterWalking;
 import me.adelemphii.waterwalking.events.PlayerJoin;
@@ -35,5 +36,6 @@ public final class WaterWalking extends JavaPlugin {
 
         Objects.requireNonNull(getCommand("togglewaterwalking")).setExecutor(new ToggleWaterWalking(this));
         Objects.requireNonNull(getCommand("settings")).setExecutor(new SettingsWaterWalking(this));
+        Objects.requireNonNull(getCommand("reloadwaterwalking")).setExecutor(new ReloadWaterWalking(this));
     }
 }
