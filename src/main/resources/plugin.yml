@@ -1,0 +1,12 @@
+name: WaterWalking
+version: ${project.version}
+main: me.adelemphii.frptrial.WaterWalking
+author: Adelemphii
+api-version: 1.13
+
+commands:
+  togglewaterwalking:
+    aliases: toggleww
+    description: Toggles waterwalking
+  settings:
+    description: Opens the GUI for settings!
